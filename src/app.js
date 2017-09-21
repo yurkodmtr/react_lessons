@@ -1,6 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import AppContainer from './components/AppContainer'
-import {articles} from './fixtures'
+import React from 'react';
+import {render} from 'react-dom';
+import Article from './Article';
+import {articles} from './fixtures';
 
-ReactDOM.render(<AppContainer articles = {articles} />, document.getElementById('container'))
+const article = articles[0];
+
+render(
+	<Article 
+		article={article}
+	/>,
+	document.getElementById('container')
+)
