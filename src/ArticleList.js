@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
+import Article from './Article';
 
 export default class ArticleList extends Component {
+
+	constructor(props) {
+		super(props);
+		
+	}
 
 	render() {
 		return (
 			<ul>
-				<h3>{this.props.article.title}</h3>
-				{this.getBody()}
-				<button onClick = {this.toggleOpen}>
-					{this.state.isOpen ? 'Close' : 'Open'}
-				</button>
-								
+				{this.props.article.map((elem)=>(
+					<Article
+						key={elem['id']} 
+						article={elem}
+					/>
+				))}											
 			</ul>
 		)
 	}	
